@@ -1,7 +1,7 @@
-#ifndef PRUEBA_H
-#define PRUEBA_H
+#ifndef ALGORITMOS_H
+#define ALGORITMOS_H
 
 
 
 
-#endif // PRUEBA_H
+#endif // ALGORITMOS_H
