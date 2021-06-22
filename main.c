@@ -1,10 +1,9 @@
 #include <stdio.h>
-#include "Sources/algoritmos.c"
+#include "Sources/Headers/FIFO.h"
 
 int main()
 {
     
-    printf("Hola, todo hecho\n");
-    Ejemplo();
+    FIFO();
     return 0;
 }

@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <unistd.h>
 
 void LIFO() {
     printf("\n\nALGORITMO LIFO\n\n"); 
     mostrarPaginas(); 
-    int marcos,referencias;
+    int marcos = 3,referencias = 25;
     marcos = 3; referencias = 25; int cantidad[25] = {2,3,2,1,5,2,4,5,3,2,5,2,8,6,2,2,7,4,1,5,9,6,3,7,9};
     int auxi[marcos][referencias];
     int errores = 0; 
@@ -71,7 +70,5 @@ void LIFO() {
         printf("\n");
     }
     printf("\nTotal de fallas de pagina: %i \n",errores); 
-    ArrayE[4] = errores;
     printf("\nTasa de fallas de página = %f\n\n\n\n", (float)errores/referencias); 
-    ArrayT[4] = (float)errores/referencias; 
 }

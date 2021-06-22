@@ -1,9 +1,5 @@
 #include "Headers/FIFO.h"
-#include <unistd.h>
 #include <stdbool.h>
-#define cantidad 24
-
-
 
 void FIFO() {
     printf("\n\n ALGORITMO FIFO\n\n"); 
@@ -46,8 +42,6 @@ void FIFO() {
         found = true;
     } 
         
-    ArrayE[1] = faults;
-    ArrayT[1] = ((float) faults / (float) n); 
     printf("\n\nNumero de fallos de pagina = %d\n", faults); 
     printf("\nTasa de fallas de pagina = %f\n\n\n\n", ((float) faults / (float) n));
 }
