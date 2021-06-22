@@ -23,7 +23,7 @@ void LRU() {
     marcos = 3; referencias = 25; 
     int pages[30] = {2,3,2,1,5,2,4,5,3,2,5,2,8,6,2,2,7,4,1,5,9,6,3,7,9};
     
-    /*int findLRU(int time[], int n) {
+   /* int findLRU(int time[], int n) {
         int i, minimum = time[0], pos = 0;
         for (i = 1; i < n; ++i) {
             if (time[i] < minimum) {

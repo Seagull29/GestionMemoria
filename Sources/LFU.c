@@ -2,7 +2,10 @@
 #include <stdbool.h>
 
 
+
+
 void LFU() {
+    
     int i, mPos, hayFallo, memLlena, valorNodoLFU; 
     int nroMarcos = 3; int nroRefs = 25; // Nro de referencias 
     int refs[25] = {2,3,2,1,5,2,4,5,3,2,5,2,8,6,2,2,7,4,1,5,9,6,3,7,9}; 
@@ -40,7 +43,7 @@ void LFU() {
         marcoActual = inicioMemoria; 
         mPos = 0; 
         if (nroMarcos == 1) {
-            if(marcoActual->valor == refs[i]){ 
+            if (marcoActual->valor == refs[i]){ 
                 buscar(marcoActual->valor, hashMap)->conteo ++; 
                 hayFallo = 0; 
                 break;

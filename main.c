@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "Sources/Headers/FIFO.h"
+#include "Sources/FIFO.c"
 
 int main()
 {
