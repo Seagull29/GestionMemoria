@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 
+int cantidad = 24;
 
 void FIFO_p() {
     printf("\n\n ALGORITMO FIFO\n\n"); 
@@ -57,7 +58,7 @@ void FIFO() {
     int marcos[] = {0, 0, 0}, i = 0, j;
     int primero = 0, fallos = 0, hay = 0;
     printf("Tiempo:\tReferencia:\tMarco 1:\tMarco 2:\tMarco 3:\tFallos:\t\n");
-    while (i < 24) {
+    while (i < cantidad) {
         hay = 0;
         for (j = 0; j < 3; ++j) {
             if (marcos[j] == 0) {
