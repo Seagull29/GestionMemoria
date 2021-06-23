@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 void Optimo() {
-    printf("\n\n ALGORITMO OPTIMO \n\n"); mostrarPaginas(); 
+    printf("\n\n ALGORITMO OPTIMO \n\n"); 
     int marcos, referencias, frames[10], temp[10], flag1, flag2, flag3, i, j, k, pos, max, faults = 0; 
 
     // Variables estaticas 
@@ -69,6 +69,6 @@ void Optimo() {
     printf("\n\nTotal de fallas de pagina = %d \n", faults); 
     printf("\nTasa de fallas de pagina = %f \n\n\n\n", ((float) faults / (float) referencias));
 
-    ArrayE[2] = faults;
-    ArrayT[2] = ((float) faults / (float) referencias); 
+    //ArrayE[2] = faults;
+    //ArrayT[2] = ((float) faults / (float) referencias); 
 }

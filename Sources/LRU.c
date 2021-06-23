@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "Headers/LRU.h"
+#include "Algoritmos.c"
 
 int findLRU(int time[], int n) {
     int i, minimum = time[0], pos = 0;
@@ -9,13 +11,13 @@ int findLRU(int time[], int n) {
             pos = i;
         }   
     }
-    return minimum[0];
+    //return minimum[0];
 } 
 
 
-void LRU() {
+void LRU_o() {
     printf("\n\n ALGORITMO LRU \n\n"); 
-    mostrarPaginas(); 
+
     int marcos;
     int referencias; 
     int frames[10], counter = 0, time[10], flag1, flag2, i, j, pos, faults = 0;
@@ -76,8 +78,63 @@ void LRU() {
         printf("\n");
     }
     float tasa = ((float) faults / (float) referencias);
-    ArrayE[0] = faults;
-    ArrayT[0] = tasa;
+    
     printf("\n\nTotal de fallas de pagina = %d", faults);
     printf("\n\nTasa de fallas de pagina = %f \n\n\n\n", tasa);
+}
+
+void LRU() {
+
+    int referencias[] = {2, 3, 2, 1, 5, 2, 4 ,5, 3, 2 , 5, 2, 8, 6, 2, 2, 7, 4, 1, 5, 9, 6, 3, 7, 9};
+    Pagina marco1, marco2, marco3;
+    marco1.numero = marco2.numero = marco3.numero = 0;
+    Pagina marcos[] = {marco1, marco2, marco3};
+    int i = 0, j;
+    int primero = 0, fallos = 0, hay = 0, k, tiempo_menor;
+    printf("Tiempo:\tReferencia:\tMarco 1:\tMarco 2:\tMarco 3:\tFallos:\t\n");
+    while (i < cantidad) {
+        hay = 0;
+        tiempo_menor = 25;
+        for (j = 0; j < 3; ++j) {
+            if (marcos[j].numero == 0) {
+                marcos[j].numero = referencias[i];
+                marcos[j].tiempo = i;
+                ++fallos;
+                hay = 1;
+                break; 
+            }
+            if (referencias[i] == marcos[j].numero) {
+                marcos[j].tiempo = i;
+                break;
+            }
+            if (j == 2) {
+                
+                for (k = 0; k < 3; ++k) {
+                    if (marcos[k].tiempo < tiempo_menor) {
+                        tiempo_menor = marcos[k].tiempo;
+                    }
+                }
+                for (k = 0; k < 3; ++k) {
+                    if (marcos[k].tiempo == tiempo_menor) {
+                        marcos[k].numero = referencias[i];
+                        marcos[k].tiempo = i;
+                        ++fallos;
+                        hay = 1;
+                        break;
+                    }
+                }
+            }
+        }
+
+
+        Imprimir_es(referencias, marcos, hay, i);
+        ++i; 
+        
+       
+    }
+
+    for (i = 0; i < 3; i++) {
+        printf("%d\n", marcos[i].numero);
+    }
+
 }
